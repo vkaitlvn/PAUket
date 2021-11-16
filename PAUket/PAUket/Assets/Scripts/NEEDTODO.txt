@@ -1,0 +1,59 @@
+
+// TECHNICAL (MAP)
+
+BOUNDARIES!!!
+
+EASTERN -73.64859931875876 E
+NORTHERN 40.72286102489918 N
+WESTERN -73.65569118738586 E
+SOUTHERN 40.71622570961449 N
+
+REFERENCE POINT (5 way intersection EAST of SCB North E): 
+40.7210416446286N, -73.65150439202564E
+
+40.72104162315008, -73.65150469457141
+to
+40.72104306480262, -73.65196591326593
+is 127.56 feet
+
+
+// implement calculation for speed and heading from azimuth, correction of
+  azimuth, and distance calculation (vector!)
+(first from mocker (probably using the tempPlayerController))
+real location probably controls the tPC to make it smooth. 
+
+
+icon scaling for OTHER icons (fixed (events/labels) and mobile (users))
+
+making sure another users icon scaling does NOT affect your own.
+
+
+
+altimeter readings (corrected as reference ONLY!) to determine floor 
+(altimeter resets when walking/moving outside)
+
+
+// TECHNICAL (USER)
+
+fix date capture issue for Event.cs
+When a user clicks on event, camera should move to the event and the
+UI should display the eventname/time etc... (REMINDER, YOU CANNOT SIGNUP/JOIN
+EVENTS USING PAUket (yet???) It will simply allow you to see what is going on
+and may provide navigation to the event. 
+
+click and drag map (disable minimap script from player temporarily)
+(add button to revert operation)
+
+// OTHER/MISC.
+
+Make NORTH BUG move in rectangle around the view area. 
+
+
+DEVELOP UI and "Search Bar"
+Enable searching for locations...by labelling said locations (and then 
+displaying their names)
+
+
+Probably have to make prefabs for events and "entities" to reuse as needed.
+
+
