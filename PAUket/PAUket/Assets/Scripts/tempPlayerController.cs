@@ -17,6 +17,8 @@ public class tempPlayerController : MonoBehaviour
 
     [SerializeField] private float thrust;
     [SerializeField] private float angleForce;
+    
+    [SerializeField] private bool playerControllerHuman;
 
 
 // silly stuff
@@ -38,8 +40,16 @@ public class tempPlayerController : MonoBehaviour
 
     private void GetInput()
     {
-        horizontalInput = Input.GetAxisRaw(HORIZONTAL);
-        verticalInput = Input.GetAxisRaw(VERTICAL);
+        if (playerControllerHuman) 
+        {
+            horizontalInput = Input.GetAxisRaw(HORIZONTAL);
+            verticalInput = Input.GetAxisRaw(VERTICAL);
+        }
+        else
+        {
+            horizontalInput = GetComponent<LocationController>().getXOut();
+            verticalInput = GetComponent<LocationController>().getZOut();
+        }
     }
 
     private void MovePlayer()
