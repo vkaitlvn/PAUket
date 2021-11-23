@@ -7,20 +7,14 @@ public class LocationController : MonoBehaviour
 {
     // declarations
 
-    [SerializeField] private float inputLatitude;
-    [SerializeField] private float inputLongitude;
-    [SerializeField] private float inputaltitude;
+    [SerializeField] private Transform intendedLocation;
 
-    [SerializeField] private float currentLatitude;
-    [SerializeField] private float currentLongitude;
+    [SerializeField] private Transform blankTrans;
 
-    [SerializeField] private float magZ;
-    [SerializeField] private float magX;
+    [SerializeField]    private float magX;
+    private float magY;
+    private float magZ;
 
-
-    // DUMMY CONTROLLER UNTIL IMPLEMENTED TO GET REAL LOCATION
-    [SerializeField] private float dummyZ;
-    [SerializeField] private float dummyX;
 
     private void FixedUpdate()
     {
@@ -28,31 +22,17 @@ public class LocationController : MonoBehaviour
         ControlPlayer();
     }
 
-    private void GetSpeed()
-    {
-        // calculate from the tempPlayerController instead!
-    }
-
     private void GetLocation()
     {
-        // KAITLYN, JANINE, OR MICHAEL please for the love of G*d do it. 
 
-        // DUMMY X and Z to be replaced with real longitude!
-        inputLatitude = dummyX;
-        inputLongitude = dummyZ;
-        // Then converted to an interpolated value to display within unity's coord system. 
-
-
-        currentLatitude = transform.position.x;
-        currentLongitude = transform.position.z;
     }
 
     private void ControlPlayer()
     {
-        // if location != locationSupposed
+        // magX borken
 
-        magX = inputLatitude - currentLatitude;
-        magZ = inputLongitude - currentLongitude;
+        magY = 0.0f;
+        magZ = Vector3.Distance(intendedLocation.position, transform.position);
 
         // if inputAltitude...set camera height appropriately.
     }
@@ -76,12 +56,34 @@ public class LocationController : MonoBehaviour
     // move forwards
     public float getZOut()
     {
-        return magZ/5.0f;
+        if (magZ > 4.0f)
+        {
+            magZ = 4.0f;
+        }
+        else if (magZ < 1.0f)
+        {
+            magZ = 0.0f;
+        }
+        return magZ/4.0f;
+    }
+
+    // move up
+    public float getYOut()
+    {
+        return magY;
     }
 
     // rotate
     public float getXOut()
     {
+        if (magX > 5.0f)
+        {
+            magZ = 5.0f;
+        }
+        /*else if (magX < 0.05f)
+        {
+            magX = 0.0f;
+        }*/
         return magX;
     }
 
