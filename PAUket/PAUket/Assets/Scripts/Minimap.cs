@@ -43,6 +43,7 @@ public class Minimap : MonoBehaviour
     {
         Vector3 vel = rb.velocity;
         centerObjectSpeed = vel.magnitude;
+        isInside = player.GetComponent<tempPlayerController>().isItInside();
     }
 
     void Update() 
@@ -78,6 +79,15 @@ public class Minimap : MonoBehaviour
         playerVisual.transform.localScale = totalScaleFactor;
 
         // if inside collision, lower camera position (to see thru buildings) and interiorZoomFactor to .25...
+
+        //f
+
+
+
+
+
+
+
         if (isInside)
         {
             if(interiorZoomFactor > 0.25)
@@ -116,8 +126,6 @@ public class Minimap : MonoBehaviour
     {
         return totalScaleFactor;
     }
-
-
 
 
 

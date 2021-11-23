@@ -15,6 +15,8 @@ public class tempPlayerController : MonoBehaviour
 
     private float currentSpeed;
 
+    private bool isInside;
+
     [SerializeField] private float thrust;
     [SerializeField] private float angleForce;
     
@@ -31,6 +33,16 @@ public class tempPlayerController : MonoBehaviour
         GetInput();
         GetSpeed();
         MovePlayer();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        isInside = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isInside = false;
     }
 
     private void GetSpeed()
@@ -68,6 +80,8 @@ public class tempPlayerController : MonoBehaviour
 
 	engineHigh.Play();
         engineHigh.volume = 0.0f;
+
+        isInside = false;
     }
 
     private void Update()
@@ -110,9 +124,10 @@ public class tempPlayerController : MonoBehaviour
 
 // ---- EXTERNAL ACCESS ---- //
 
-
-
-
+    public bool isItInside()
+    {
+        return isInside;
+    }
 
 
 
