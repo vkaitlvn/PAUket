@@ -59,8 +59,8 @@ public class tempPlayerController : MonoBehaviour
         }
         else
         {
-            horizontalInput = GetComponent<LocationController>().getXOut();
-            verticalInput = GetComponent<LocationController>().getZOut();
+            horizontalInput = GetComponent<LocationController2>().getXOut();
+            verticalInput = GetComponent<LocationController2>().getZOut();
         }
     }
 
