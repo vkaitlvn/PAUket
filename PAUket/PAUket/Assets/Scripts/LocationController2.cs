@@ -34,7 +34,6 @@ public class LocationController2 : MonoBehaviour
         // DISTANCE FROM?
         float distanceToTarget = Vector3.Distance(transform.position, intendedPosition);
 
-        Debug.Log(angleToDir);
         if (distanceToTarget > 1.5f)
         {
             if (distanceToTarget > 8.0f)
@@ -45,7 +44,7 @@ public class LocationController2 : MonoBehaviour
             else
             {
             ZInput = distanceToTarget * 0.125f;
-            XInput = angleToDir * 0.0125f;
+            XInput = angleToDir * 0.025f;
             }
         }
         else
