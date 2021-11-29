@@ -21,7 +21,7 @@ const toggleHome = () => {
 
 const Footer = () => {
   return (
-    <div className="row bg-dark">
+    <div style={{ background: "#000000" }}>
       <FooterWrap>
         <FooterLinksContainer>
           <FooterLinksWrapper></FooterLinksWrapper>

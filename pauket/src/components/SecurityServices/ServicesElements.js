@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TopLine = styled.p`
-  color: #3c2a25;
+  color: #14232b;
   font-size: 40px;
   line-height: 1;
   font-weight: 700;
@@ -11,43 +11,74 @@ export const TopLine = styled.p`
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media screen and (max-width: 280px) {
+    font-size: 25px;
+  }
 `;
 
 export const Heading = styled.h1`
-  margin-bottom: 24px;
+  margin-bottom: 30px;
   font-size: 40px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText }) => (lightText ? "#f7f8fa" : "#f7f8fa")};
+  color: rgb(255, 255, 255);
   justify-content: center;
   align-items: center;
   text-align: center;
 
   @media screen and (max-width: 480px) {
-    font-size: 32px;
+    font-size: 30px;
   }
   @media screen and (max-width: 280px) {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 
 export const Subtitle = styled.p`
-  font-size: 30px;
+  font-size: 12px;
   line-height: 1.25;
   color: ${({ darkText }) => (darkText ? "#fff" : "#fff")};
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 5;
 
   @media screen and (max-width: 480px) {
-    font-size: 13px;
-  }
-
-  @media screen and (max-width: 280px) {
     font-size: 10px;
   }
+`;
+
+export const TeamP = styled.p`
+  font-size: 1rem;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.25;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @media screen and (max-width: 812px) {
+    font-size: 0.7rem;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 0.6rem;
+  }
   @media screen and (max-width: 1024px) {
-    font-size: 15px;
+    font-size: 0.8rem;
+  }
+`;
+
+export const Title = styled.p`
+  font-size: 22px;
+  line-height: 1;
+  color: #14232b;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 812px) {
+    font-size: 19px;
   }
 `;

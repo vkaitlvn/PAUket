@@ -15,7 +15,7 @@ export const TopLine = styled.p`
 `;
 
 export const Heading = styled.h1`
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   font-size: 45px;
   line-height: 1.1;
   font-weight: 600;
@@ -26,25 +26,5 @@ export const Heading = styled.h1`
 
   @media screen and (max-width: 480px) {
     font-size: 32px;
-  }
-`;
-
-export const Subtitle = styled.p`
-  margin-bottom: 0px;
-  font-size: 20px;
-  line-height: 1.25;
-  color: ${({ darkText }) => (darkText ? "#fff" : "#fff")};
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  @media screen and (max-width: 480px) {
-    font-size: 13px;
-  }
-  @media screen and (max-width: 280px) {
-    font-size: 10px;
-  }
-  @media screen and (max-width: 1024px) {
-    font-size: 15px;
   }
 `;

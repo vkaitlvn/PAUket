@@ -5,16 +5,16 @@ import HeroSection from "../components/HeroSection";
 import InfoSectionTwo from "../components/InfoSectionTwo";
 // import Events from '../components/Events';
 
-// import Services from '../components/Services';
+import SecurityServices from "../components/SecurityServices";
 import PingBanner from "../components/PingBanner";
-// import CallBanner from '../components/CallBanner';
-// import ReportBanner from '../components/ReportBanner';
+import CallBanner from "../components/CallBanner";
+import ReportBanner from "../components/ReportBanner";
 
 // import LocationServices from '../components/LocationServices';
 // import FindFriend from '../components/FindFriend';
 
 import Navbar from "../components/Navbar";
-// import Sidebar from '../components/Sidebar';
+import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import InfoSection from "../components/InfoSection";
 
@@ -27,11 +27,16 @@ const Home = () => {
 
   return (
     <div className="container-fluid">
+      <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <HeroSection />
       <InfoSection />
       <InfoSectionTwo />
+
+      <SecurityServices />
       <PingBanner />
+      <CallBanner />
+      <ReportBanner />
       {/* <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
     

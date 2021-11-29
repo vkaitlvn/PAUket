@@ -26,7 +26,14 @@ const InfoSectionn = ({ alt }) => {
             <div className="col-lg-6 d-flex flex-column px-0 ps-lg-5 mt-5 mt-lg-0">
               <TopLine>ABOUT PAUKET </TopLine>
               <Heading> ADELPHI'S NAVIGATION APP</Heading>
-              <Subtitle> DESC. </Subtitle>
+              <Subtitle>
+                {" "}
+                The PAUket application introduces an innovative, interactive
+                navigation system. The PAUket application provides
+                students/faculty potential to engage with their own college
+                campus. Students/faculty will have access to the navigation
+                system through a website as well as mobile access.{" "}
+              </Subtitle>
             </div>
           </div>
         </div>

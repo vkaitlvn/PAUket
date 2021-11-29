@@ -33,7 +33,7 @@ const Navbar = ({ toggle }) => {
           <NavLogo to="/" onClick={toggleHome} className="text-white d-flex">
             <img
               src={logo}
-              className="w-100 h-100"
+              className="w-75 h-75"
               style={{
                 objectFit: "contain",
                 objectPosition: "bottom center",

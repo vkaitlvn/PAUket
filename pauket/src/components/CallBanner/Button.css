@@ -43,7 +43,7 @@ body {
   left: -15px;
   width: 0;
   height: 0;
-  border-top: 54px solid#f5ad4b;
+  border-top: 30px solid#3c2a25;
   border-left: 15px solid transparent;
   -webkit-transition: border-color 0.2s ease-in-out;
   -moz-transition: border-color 0.2s ease-in-out;
