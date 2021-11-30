@@ -44,7 +44,7 @@ public class LocationController2 : MonoBehaviour
             else
             {
             ZInput = distanceToTarget * 0.125f;
-            XInput = angleToDir * 0.025f;
+            XInput = angleToDir * 0.125f;
             }
         }
         else
