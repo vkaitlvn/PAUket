@@ -1,29 +1,21 @@
 CREATE DATABASE pauketDB;
 USE pauketDB;
-CREATE TABLE Student 
+/* Table to store user data */
+CREATE TABLE Users 
 (
-	studentID INT,
-    studentFname VARCHAR(50),
-    studentLname VARCHAR(50),
-    studentEmail VARCHAR(50)
+	userID INT,
+    userFname VARCHAR(50),
+    userLname VARCHAR(50),
+    userEmail VARCHAR(50),
+    Occupation VARCHAR(8), /* (Student/Faculty/Security) */
+    safety_level INT
 );
-CREATE TABLE Faculty 
-(
-	facultyID INT,
-    facultyFname VARCHAR(50),
-    facultyLname VARCHAR(50),
-    facultyEmail VARCHAR(50)
-);
-CREATE TABLE Cops 
-(
-	CopsID INT,
-    CopsFname VARCHAR(50),
-    CopsLname VARCHAR(50),
-    CopsEmail VARCHAR(50)
-);
+/* Table to store location data */
 CREATE TABLE Location
 (
 	Latitude FLOAT,
     Longitude FLOAT,
-    Altitude FLOAT
+    Altitude FLOAT,
+    created_at DATETIME,
+    userID INT
 );
