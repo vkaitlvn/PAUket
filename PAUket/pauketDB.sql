@@ -13,7 +13,7 @@ CREATE TABLE Users
 /* Table to store location data */
 CREATE TABLE Location
 (
-	Latitude FLOAT,
+    Latitude FLOAT,
     Longitude FLOAT,
     Altitude FLOAT,
     created_at DATETIME,

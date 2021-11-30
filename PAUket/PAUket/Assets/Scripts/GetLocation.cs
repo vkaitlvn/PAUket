@@ -19,8 +19,11 @@ public class GetLocation: MonoBehaviour
     [SerializeField] private float UNITYLongitude;
     [SerializeField] private float UNITYAltitude;
 
+    private bool locationServiceOn;
+
     IEnumerator Start() 
     {
+    locationServiceOn = false;
     // Uncomment if you want to test with Unity Remote
     #if UNITY_EDITOR
         yield return new WaitWhile(() => !UnityEditor.EditorApplication.isRemoteConnected);
@@ -93,6 +96,7 @@ public class GetLocation: MonoBehaviour
         {
             Debug.LogFormat("Location service live. status {0}", UnityEngine.Input.location.status);
             // Access granted and location value could be retrieved
+            locationServiceOn = true;
 
 
 
@@ -121,11 +125,21 @@ public class GetLocation: MonoBehaviour
     // This section entirely by Dillon Montefusco
     private void Update() 
     {
+        // ONLY RUNS IF ON, DUH.
+        if (locationServiceOn)
+        {
+           latitude  = UnityEngine.Input.location.lastData.latitude;
+           longitude = UnityEngine.Input.location.lastData.longitude;
+           altitude  = UnityEngine.Input.location.lastData.altitude;
+        }
 
-        // Dillon Montefusco
-        latitude = UnityEngine.Input.location.lastData.latitude;
-        longitude = UnityEngine.Input.location.lastData.longitude;
-        altitude = UnityEngine.Input.location.lastData.altitude;
+        // OTHERWISE DUMMY VALUES AND MESSAGE
+        else
+        {
+           latitude  = 0.0f;
+           longitude = 0.0f;
+           altitude  = 8000.0f;
+        }
 
         // NOTES!
         // UNITY LAT LONG 159.5, -145.5 = 40.721226, -73.653963
@@ -144,25 +158,46 @@ public class GetLocation: MonoBehaviour
         // N:  40.72292N
         // E: -73.64861E
         // S:  40.71687N
+        // avg N:  40.719895
+        // avg E: -73.651905
+
+
+        // W-E distance (m): 556.8
+        // N-S distance (m): 671.8
+
+        // MAP X SCALE: 583.8854
+        // MAP Y SCALE: 669.4155
+
+        // ANOTHER REFERENCE: 40.7210426, -73.6522585
+        // 141.3495, -4.015503
+
+         
+
 
         // CHECK THE BOUNDARIES
         if ((latitude > 40.71687f) && (latitude < 40.72292f) && (longitude > -73.65520f) && (longitude < -73.64861f))
         {
 
-            // SET UNITY LOCATION
-            UNITYLatitude = ((latitude - 40.71972076855622f) * 109050.0f ); //110947.2f);
+            // CONVERT REAL LAT/LONG TO UNITY DISPLACEMENT (m)
+            //                          (neg) REFERENCE  *  SCALAR   +/-   OFFSET
+            UNITYLatitude  =  (((latitude - 40.7210426f) * 109456.425f) + 141.3495f); //110947.2f);
+            UNITYLongitude = (((longitude + 73.6522585f) * 80435.1518f) - 4.015503f); //87843.36f);
+
+            /* OLD REFERENCE POINT
+            UNITYLatitude  = ((latitude - 40.71972076855622f) * 109050.0f ); //110947.2f);
             UNITYLongitude = ((longitude + 73.65218231278996f) * 85400.0f); //87843.36f);
+            */
 
             Vector3 posInSpace = new Vector3(UNITYLongitude, UNITYAltitude, UNITYLatitude);
             transform.position = posInSpace;
         }
         else 
         {
-            UNITYLatitude = 0.0f;
+            UNITYLatitude  = 0.0f;
             UNITYLongitude = 0.0f;
 
             // REPLACE WITH UI MESSAGE!
-            Debug.Log("User not on campus!");
+            //Debug.Log("User not on campus!");
         }
     }
 }

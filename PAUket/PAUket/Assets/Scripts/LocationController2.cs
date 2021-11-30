@@ -25,11 +25,11 @@ public class LocationController2 : MonoBehaviour
 
 
         // IN FRONT OR BEHIND?
-        Vector3 dirToMovePosition = (intendedPosition - transform.position).normalized;
-        float dot = Vector3.Dot(transform.forward, dirToMovePosition);
+        Vector3 forwardsDifference = (intendedPosition - transform.position).normalized;
+        float dot = Vector3.Dot(transform.forward, forwardsDifference);
 
         // TO RIGHT OR LEFT?
-        float angleToDir = Vector3.SignedAngle(transform.forward, dirToMovePosition, Vector3.up);
+        float directionToDifference = Vector3.SignedAngle(transform.forward, forwardsDifference, Vector3.up);
         
         // DISTANCE FROM?
         float distanceToTarget = Vector3.Distance(transform.position, intendedPosition);
@@ -39,12 +39,12 @@ public class LocationController2 : MonoBehaviour
             if (distanceToTarget > 8.0f)
             {
                 ZInput = 1.0f;
-                XInput = angleToDir * 0.0125f;
+                XInput = directionToDifference * 0.0125f;
             }
             else
             {
             ZInput = distanceToTarget * 0.125f;
-            XInput = angleToDir * 0.125f;
+            XInput = directionToDifference * 0.125f;
             }
         }
         else
@@ -59,14 +59,6 @@ public class LocationController2 : MonoBehaviour
         this.intendedPosition = intendedPosition;
     }
 
-
-
-
-
-
-
-
-
     // Automatic
     // THIS IS WHAT THE TPC LOOKS FOR TO INPUT WHEN AI CONTROLLED!
     public float getZOut()
@@ -78,11 +70,4 @@ public class LocationController2 : MonoBehaviour
     {
         return XInput;
     }
-
-
-
-
-
-
-
 }
