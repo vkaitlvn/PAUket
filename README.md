@@ -1,3 +1,7 @@
+This is PAUket's MobileApp branch. The following codes make up our website for the PAUket application. PAUket consists of a website feature that allows users to access PAUket on Ecampus through Adelphi University's website or by accessing our own domain. Users can utilize PAUket on desktops or laptops. PAUket's website is also fully mobile responsive allowing users to access PAUkets site application on their own mobile devices. PAUket's website feature also has a section where users can launch our navigation system application that is based in Unity. Other features include: a calendar of upcoming campus events, location services, find a friend service, an SOS security feature, and a log in system.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
