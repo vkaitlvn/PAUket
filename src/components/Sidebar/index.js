@@ -37,9 +37,6 @@ const Sidebar = ({ isOpen, toggle }) => {
           <SidebarLink to="location" onClick={toggle}>
             LOCATION SERVICES
           </SidebarLink>
-          <SidebarLink to="friend" onClick={toggle}>
-            FIND A FRIEND
-          </SidebarLink>
           <SidebarLink>
           <Button to="/about">LOG IN WITH ECAMPUS</Button>
 

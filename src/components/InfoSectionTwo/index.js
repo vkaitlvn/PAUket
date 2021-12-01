@@ -21,13 +21,14 @@ const InfoSection = ({ alt }) => {
               <PauketButton />
             </div>
 
-            <div className="col-lg-4 d-flex flex-column px-0 ps-lg-5 mt-5 mt-lg-0">
+            <div className="col-lg-3 d-flex flex-column px-0 ps-lg-5 mt-5 mt-lg-0">
               <img
                 src={app}
                 alt={alt}
                 className="h-100 w-100"
                 style={{ objectFit: "cover" }}
               />
+              
             </div>
           </div>
         </div>

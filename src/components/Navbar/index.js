@@ -7,7 +7,7 @@ import { MobileIcon, Nav, NavLogo, NavMenu } from "./NavbarElements";
 
 import logo from "../../images/logo.svg";
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, alt }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -33,6 +33,7 @@ const Navbar = ({ toggle }) => {
           <NavLogo to="/" onClick={toggleHome} className="text-white d-flex">
             <img
               src={logo}
+              alt ={alt}
               className="w-75 h-75"
               style={{
                 objectFit: "contain",

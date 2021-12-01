@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TopLine = styled.p`
   color: #f5ad4b;
-  font-size: 2.5rem;
+  font-size: 4rem;
   line-height: 1;
   font-weight: 700;
   letter-spacing: 1.4px;
@@ -34,4 +34,3 @@ export const Heading = styled.h1`
     font-size: 8vw;
   }
 `;
-

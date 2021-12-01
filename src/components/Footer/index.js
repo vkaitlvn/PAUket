@@ -1,7 +1,6 @@
 import React from "react";
 import { animateScroll as scroll } from "react-scroll";
 
-import "./Footer.css";
 
 import {
   FooterWrap,
@@ -11,8 +10,7 @@ import {
   SocialMediaWrap,
   SocialLogo,
   WebsiteRights,
-  FooterLink,
-  a,
+  
 } from "./FooterElements";
 
 const toggleHome = () => {

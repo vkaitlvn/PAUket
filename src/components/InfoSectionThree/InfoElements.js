@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TopLine = styled.p`
-  color: #3c2a25;
+  color: #f5ad4b;
   font-size: 40px;
   line-height: 1;
   font-weight: 700;

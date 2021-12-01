@@ -8,6 +8,8 @@ import Home from './pages';
 
 import About from './pages/about';
 
+import ping from './pages/ping';
+
 
 
 
@@ -17,6 +19,7 @@ function App() {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={About} exact />
+        <Route path="/ping" component={ping} exact />
 
       </Switch>
       

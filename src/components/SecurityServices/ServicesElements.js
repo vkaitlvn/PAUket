@@ -35,19 +35,23 @@ export const Heading = styled.h1`
   }
 `;
 
-export const Subtitle = styled.p`
-  font-size: 12px;
-  line-height: 1.25;
-  color: ${({ darkText }) => (darkText ? "#fff" : "#fff")};
+export const Top = styled.p`
+  color: #14232b;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 5;
 
-  @media screen and (max-width: 480px) {
-    font-size: 10px;
+  @media screen and (max-width: 280px) {
+    font-size: 25px;
   }
 `;
+
 
 export const TeamP = styled.p`
   font-size: 1rem;
@@ -70,7 +74,7 @@ export const TeamP = styled.p`
 `;
 
 export const Title = styled.p`
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
   color: #14232b;
   text-align: center;

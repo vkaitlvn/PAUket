@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 export const TopLine = styled.p`
   color: #3c2a25;
@@ -28,26 +30,5 @@ export const Heading = styled.h1`
   }
   @media screen and (max-width: 280px) {
     font-size: 30px;
-  }
-`;
-
-export const Subtitle = styled.p`
-  font-size: 20px;
-  line-height: 1.25;
-  color: ${({ darkText }) => (darkText ? "#fff" : "#fff")};
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 0;
-
-  @media screen and (max-width: 480px) {
-    font-size: 13px;
-  }
-
-  @media screen and (max-width: 280px) {
-    font-size: 10px;
-  }
-  @media screen and (max-width: 1024px) {
-    font-size: 15px;
   }
 `;
