@@ -23,12 +23,22 @@ public class Minimap : MonoBehaviour
     // for collision based zoom!
     [SerializeField] public bool isInside;
 
+
+
+    // BUTTON CONTROL BOOLS
+
     // for zoom lock!
     [SerializeField] public bool zoomLock;
 
     // for burger options!
     [SerializeField] public bool burgerOn;
     [SerializeField] public GameObject options;
+
+    // for north mode!
+    [SerializeField] public bool freedNorth;
+
+
+
 
     public float centerObjectSpeed;
 
@@ -136,6 +146,11 @@ public class Minimap : MonoBehaviour
 
 
         }
+
+        if (!freedNorth)
+        {
+            transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        }
         }
     }
 
@@ -184,7 +199,19 @@ public class Minimap : MonoBehaviour
         }
     }
 
-
+    public void FreeNorth()
+    {
+        if (freedNorth)
+        {
+            freedNorth = false;
+            // lock camera north...
+        }
+        else
+        {
+            freedNorth = true;
+            // free camera north...
+        }
+    }
 
 
 

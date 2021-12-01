@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class tempPlayerController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class tempPlayerController : MonoBehaviour
     [SerializeField] private AudioSource engineLow;
     [SerializeField] private AudioSource engineHigh;
     [SerializeField] private float engineVolume;
+    public Slider volumeSlider;
 
     private void FixedUpdate()
     {
@@ -86,6 +88,7 @@ public class tempPlayerController : MonoBehaviour
 
     private void Update()
     {
+        engineVolume = volumeSlider.value;
         // pitch
         if (currentSpeed <= 0.5f)
         {
@@ -129,6 +132,10 @@ public class tempPlayerController : MonoBehaviour
         return isInside;
     }
 
+    public void SetEngineVolume(float vol)
+    {
+        engineVolume = vol;
+    }
 
 
 }
