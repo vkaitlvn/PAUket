@@ -97,7 +97,7 @@ public class Minimap : MonoBehaviour
 
         // if inside collision, lower camera position (to see thru buildings) and interiorZoomFactor to .25...
 
-        //f
+        //
 
 
 
@@ -113,6 +113,8 @@ public class Minimap : MonoBehaviour
             }
 
             // SET CAMERA HEIGHT (FOR INSIDE, SET TO 10m)
+
+
 
         }
         else 

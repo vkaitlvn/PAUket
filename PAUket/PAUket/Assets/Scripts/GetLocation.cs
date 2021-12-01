@@ -5,7 +5,7 @@ using UnityEngine;
 public class GetLocation: MonoBehaviour
 {
 
-    // CODE FROM https://nosuchstudio.medium.com/how-to-access-gps-location-in-unity-521f1371a7e3
+    // INITIAL CODE FROM https://nosuchstudio.medium.com/how-to-access-gps-location-in-unity-521f1371a7e3
     // INITIAL FORM BY "No Such Dev"
     // Modified by Dillon Montefusco
 

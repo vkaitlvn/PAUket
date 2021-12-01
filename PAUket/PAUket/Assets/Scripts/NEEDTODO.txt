@@ -21,17 +21,18 @@ is 127.56 feet
   azimuth, and distance calculation (vector!)
 (first from mocker (probably using the tempPlayerController))
 real location probably controls the tPC to make it smooth. 
-
+    // DONE
 
 icon scaling for OTHER icons (fixed (events/labels) and mobile (users))
+    // DONE
 
 making sure another users icon scaling does NOT affect your own.
-
+    // OTHER USERS???? (DELAYED)
 
 
 altimeter readings (corrected as reference ONLY!) to determine floor 
 (altimeter resets when walking/moving outside)
-
+    // ALTIMETER FUNCTION (DELAYED)
 
 // TECHNICAL (USER)
 
@@ -46,14 +47,24 @@ click and drag map (disable minimap script from player temporarily)
 
 // OTHER/MISC.
 
-Make NORTH BUG move in rectangle around the view area. 
+Make NORTH BUG move in rectangle around the view area.
+    // CANCELLED, REPLACED WITH ROTATING COMPASS IN TOP LEFT. 
 
 
 DEVELOP UI and "Search Bar"
 Enable searching for locations...by labelling said locations (and then 
 displaying their names)
-
+    // IN PROGRESS (21:50, 2021/11/30)
+add dictionary (for lookup) and sorting alg.
+    // DELAYED (CRITICAL)
 
 Probably have to make prefabs for events and "entities" to reuse as needed.
+
+Actual navigation (vectors and best route calculation). 
+    // IN PROGRESS (EARLY STAGE)
+
+Indoor maps (I NEED BETTER PICTURES TO GENERATE VECTORS!)
+    // IN PROGRESS (CRITICAL)
+  // a dummy map from the fire escape plan is given for swirbul library.
 
 
