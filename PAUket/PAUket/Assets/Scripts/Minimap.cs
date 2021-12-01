@@ -23,6 +23,9 @@ public class Minimap : MonoBehaviour
     // for collision based zoom!
     [SerializeField] public bool isInside;
 
+    // for zoom lock!
+    [SerializeField] public bool zoomLock;
+
     public float centerObjectSpeed;
 
     public Vector3 totalScaleFactor;
@@ -48,11 +51,25 @@ public class Minimap : MonoBehaviour
 
     void Update() 
     {
-        northBug.eulerAngles = new Vector3(0, 0, player.eulerAngles.y);
+        northBug.eulerAngles = new Vector3(0, 0, Camera.main.transform.localEulerAngles.y);
     }
 
     void LateUpdate ()
     {
+        if (zoomLock)
+        {
+            transform.position = new Vector3(0f, 50f, 0f);
+            transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+
+            // Landscape Or.
+            //cam.orthographicSize = 334.7075f;
+            cam.orthographicSize = 583.8854f;
+
+            Vector3 changeLocked = new Vector3(2f, 2f, 2f);
+            totalScaleFactor = changeLocked * iconScaleFactor;
+            playerVisual.transform.localScale = totalScaleFactor;
+        }
+        else {
         Vector3 newPosition = player.position;
         newPosition.y = transform.position.y;
         transform.position = newPosition;
@@ -94,6 +111,9 @@ public class Minimap : MonoBehaviour
             {
                 interiorZoomFactor -= 0.0125f;
             }
+
+            // SET CAMERA HEIGHT (FOR INSIDE, SET TO 10m)
+
         }
         else 
         {
@@ -105,8 +125,12 @@ public class Minimap : MonoBehaviour
             {
                 interiorZoomFactor -= 0.0125f;
             }
-        }
 
+            // SET CAMERA HEIGHT (FOR OUTSIDE, SET TO 50m)
+
+
+        }
+        }
     }
 
 // ---- EXTERNAL ACCESS ---- //
@@ -119,12 +143,25 @@ public class Minimap : MonoBehaviour
 
     public float GetEulerAngleY()
     {
-        return player.eulerAngles.y;
+        //return player.eulerAngles.y;
+        return Camera.main.transform.localEulerAngles.y;
     }
 
     public Vector3 GetTotalScaleFactor()
     {
         return totalScaleFactor;
+    }
+
+    public void ButtonZoomLock()
+    {
+        if (zoomLock)
+        {
+            zoomLock = false;
+        }
+        else
+        {
+            zoomLock = true;
+        }
     }
 
 

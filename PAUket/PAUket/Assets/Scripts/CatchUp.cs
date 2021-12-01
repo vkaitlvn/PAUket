@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CatchUp : MonoBehaviour
+
+// This script is unused and should be removed. It has no function. 
+
 {
     void Start()
     {
