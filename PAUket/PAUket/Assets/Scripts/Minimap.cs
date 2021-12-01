@@ -26,6 +26,10 @@ public class Minimap : MonoBehaviour
     // for zoom lock!
     [SerializeField] public bool zoomLock;
 
+    // for burger options!
+    [SerializeField] public bool burgerOn;
+    [SerializeField] public GameObject options;
+
     public float centerObjectSpeed;
 
     public Vector3 totalScaleFactor;
@@ -65,7 +69,7 @@ public class Minimap : MonoBehaviour
             //cam.orthographicSize = 334.7075f;
             cam.orthographicSize = 583.8854f;
 
-            Vector3 changeLocked = new Vector3(2f, 2f, 2f);
+            Vector3 changeLocked = new Vector3(2.5f, 2.5f, 2.5f);
             totalScaleFactor = changeLocked * iconScaleFactor;
             playerVisual.transform.localScale = totalScaleFactor;
         }
@@ -166,7 +170,19 @@ public class Minimap : MonoBehaviour
         }
     }
 
-
+    public void DisplayOptions()
+    {
+        if (burgerOn)
+        {
+            burgerOn = false;
+            options.SetActive(false);
+        }
+        else
+        {
+            burgerOn = true;
+            options.SetActive(true);
+        }
+    }
 
 
 
