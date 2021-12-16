@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetLocation: MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GetLocation: MonoBehaviour
     [SerializeField] private float UNITYLatitude;
     [SerializeField] private float UNITYLongitude;
     [SerializeField] private float UNITYAltitude;
+
+    [SerializeField] private Text notOnCampus;
 
     private bool locationServiceOn;
 
@@ -190,6 +193,7 @@ public class GetLocation: MonoBehaviour
 
             Vector3 posInSpace = new Vector3(UNITYLongitude, UNITYAltitude, UNITYLatitude);
             transform.position = posInSpace;
+            notOnCampus.gameObject.SetActive(false);
         }
         else 
         {
@@ -197,7 +201,7 @@ public class GetLocation: MonoBehaviour
             UNITYLongitude = 0.0f;
 
             // REPLACE WITH UI MESSAGE!
-            //Debug.Log("User not on campus!");
+            notOnCampus.gameObject.SetActive(true);
         }
     }
 }

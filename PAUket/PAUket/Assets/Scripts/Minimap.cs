@@ -79,7 +79,7 @@ public class Minimap : MonoBehaviour
             //cam.orthographicSize = 334.7075f;
             cam.orthographicSize = 583.8854f;
 
-            Vector3 changeLocked = new Vector3(2.5f, 2.5f, 2.5f);
+            Vector3 changeLocked = new Vector3(3.25f, 3.25f, 3.25f);
             totalScaleFactor = changeLocked * iconScaleFactor;
             playerVisual.transform.localScale = totalScaleFactor;
         }
@@ -126,7 +126,9 @@ public class Minimap : MonoBehaviour
                 interiorZoomFactor -= 0.0125f;
             }
 
+            
             // SET CAMERA HEIGHT (FOR INSIDE, SET TO 10m)
+            transform.position = new Vector3(transform.position.x, 10f, transform.position.z);
 
 
 
@@ -143,6 +145,7 @@ public class Minimap : MonoBehaviour
             }
 
             // SET CAMERA HEIGHT (FOR OUTSIDE, SET TO 50m)
+            transform.position = new Vector3(transform.position.x, 50f, transform.position.z);
 
 
         }

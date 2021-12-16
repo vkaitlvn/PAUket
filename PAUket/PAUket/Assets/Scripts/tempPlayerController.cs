@@ -84,6 +84,7 @@ public class tempPlayerController : MonoBehaviour
         engineHigh.volume = 0.0f;
 
         isInside = false;
+        volumeSlider.value = 0.0f;
     }
 
     private void Update()

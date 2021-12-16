@@ -62,9 +62,10 @@ Probably have to make prefabs for events and "entities" to reuse as needed.
 
 Actual navigation (vectors and best route calculation). 
     // IN PROGRESS (EARLY STAGE)
+    // will do based on intersections and checkpoints. (MC2 style)
 
 Indoor maps (I NEED BETTER PICTURES TO GENERATE VECTORS!)
     // IN PROGRESS (CRITICAL)
-  // a dummy map from the fire escape plan is given for swirbul library.
+    // a dummy map from the fire escape plan is given for swirbul library.
 
 
